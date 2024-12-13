@@ -2,6 +2,6 @@ kspi_correction 0.0469
 
 poisson_likelihood xtrue
 
-debug true
+debug xtrue
 
 include_ss true

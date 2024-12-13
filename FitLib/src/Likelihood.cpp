@@ -52,7 +52,7 @@ double Likelihood::operator()(const double* par){
             kappa_vec_to_use(3) = 1 - (par[3]*correction); // g pi D0D0
             kappa_vec_to_use(4) = (par[4]*correction);     // gg/pipi D0D0
             cp_even = false;
-        }            
+        }
 
         UncorrelatedPredictions up(D1, D2);
         up.SetDebug(m_debug);
@@ -92,15 +92,15 @@ double Likelihood::operator()(const double* par){
 
     // Add SS contribution
     Unfolding unfolding;
+    unfolding.SetDebug(m_debug);
     if (m_include_ss){
 
-        m_log.warning("Uncertainty on unfolded yields given by relative errors");
+        m_log.warning("Uncertainty on unfolded OS and LS yields given by relative errors from the observed yields");
 
         // Get unfolded OS yields
         TVectorD* tmp_observed_OS_yields = m_yields->GetYields( "KPi_vs_KPi" );
         TVectorD* tmp_observed_OS_errors = m_yields->GetErrors( "KPi_vs_KPi" );
         auto tmp_unfolded_OS_yields = unfolding.UnfoldYields(tmp_observed_OS_yields, "KPi_vs_KPi");
-        TVectorD tmp_unfolded_OS_errors(5);
         
         // Get unfolded SS yields
         TVectorD* tmp_observed_LS_yields = m_yields->GetYields( "SSKPi_vs_KPi" );

@@ -21,7 +21,7 @@ private:
     std::string m_double_tag;
     std::string m_D1;
     std::string m_D2;
-    bool m_debug;
+    bool m_debug = false;
     Log m_log;
 
 };

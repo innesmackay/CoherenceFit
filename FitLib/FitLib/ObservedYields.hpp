@@ -22,7 +22,7 @@ public:
     void SetDebug(bool debug){ m_debug = debug; }
 
 private:
-    bool m_debug;
+    bool m_debug = false;
     Log m_log;
     std::map<std::string, TVectorD*> m_all_yields;
     std::map<std::string, TVectorD*> m_all_errors;

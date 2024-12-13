@@ -25,11 +25,11 @@ TMatrixD UncorrelatedPredictions::CalculatePredictions(){
 
     // Unfold the KPi vs KPi yields
     Unfolding unfolding;
+    unfolding.SetDebug(m_debug);
     auto unfolded_KPi_vs_KPi_yields = unfolding.UnfoldYields(KPi_vs_KPi_yields, "KPi_vs_KPi");
 
     // Compute the contributions
     auto DT_effs = unfolding.GetUnfoldingMatrix(m_double_tag);
-    DT_effs.Print("v");
     TMatrixD contributions(5, 5);
     for (int i=0; i<5; i++){
         for (int j=0; j<5; j++){

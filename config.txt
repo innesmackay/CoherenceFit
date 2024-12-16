@@ -1,4 +1,4 @@
-kspi_correction 0.0469
+kspi_correction 0.0269
 
 poisson_likelihood xtrue
 

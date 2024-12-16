@@ -14,6 +14,7 @@ public:
     ObservedYields();
     ~ObservedYields();
     TVectorD* Load(std::string double_tag, std::string hist_to_load);
+    TVectorD* GetMaxErrs(TVectorD* loErrs, TVectorD* hiErrs);
     void LoadAll();
 
     TVectorD* GetYields(std::string double_tag){ return m_all_yields[double_tag]; }
